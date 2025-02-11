@@ -18,7 +18,7 @@ class DocumentationRAG:
 
         # Text splitter for chunking
         self.text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1000, chunk_overlap=200, add_start_index=True
+            chunk_size=2000, chunk_overlap=500, add_start_index=True
         )
 
         # RAG prompt template
@@ -57,7 +57,7 @@ class DocumentationRAG:
     def query(self, question: str) -> tuple[str, str]:
         """Query the documentation"""
         # Get relevant documents
-        docs = self.vector_store.similarity_search(question, k=3)
+        docs = self.vector_store.similarity_search(question, k=10)
 
         # Combine context
         context = "\n\n".join([doc.page_content for doc in docs])
