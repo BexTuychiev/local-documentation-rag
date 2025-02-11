@@ -115,7 +115,12 @@ def sidebar():
 def initialize_chat_state():
     """Initialize session state for chat"""
     if "messages" not in st.session_state:
-        st.session_state.messages = []
+        st.session_state.messages = [
+            {
+                "role": "assistant",
+                "content": "👋 Hi! I'm your documentation assistant. I can help you understand any documentation you've scraped and chosen from the sidebar.",
+            }
+        ]
     if "rag" not in st.session_state:
         st.session_state.rag = DocumentationRAG()
 
