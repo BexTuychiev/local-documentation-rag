@@ -1,0 +1,9 @@
+firecrawl_py==1.10.2
+langchain_chroma==0.2.1
+langchain_community==0.3.17
+langchain_core==0.3.34
+langchain_ollama==0.2.3
+langchain_text_splitters==0.3.6
+pydantic==2.10.6
+python-dotenv==1.0.1
+streamlit==1.41.1
